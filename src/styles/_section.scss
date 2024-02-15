@@ -1,0 +1,52 @@
+@use 'var';
+@use 'mixin';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 320px;
+  padding: 16px;
+
+  &__title {
+    @include mixin.title();
+
+    @media (min-width: var.$mediaMinWidth) {
+      @include mixin.title(32px);
+    }
+  }
+
+  &__text {
+    @include mixin.text();
+    text-align: center;
+  }
+
+  &__button {
+    display: block;
+
+    color: var.$mainTextColor;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid var.$mainTextColor;
+    border-radius: 5px;
+    padding:8px;
+    margin: 8px 0;
+    width: 150px;
+
+    @include mixin.title(24px);
+  }
+
+  &--sobre {
+    background-color: var.$sectionBackgroundColor1;
+  }
+
+  &--filmes {
+    background-color: var.$sectionBackgroundColor2;
+  }
+
+  &--personagens {
+    background-color: var.$sectionBackgroundColor3;
+  }
+}

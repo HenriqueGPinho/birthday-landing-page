@@ -1,9 +1,8 @@
 @use 'var';
+@use 'mixin';
 @use 'header';
 @use 'hero';
-@use 'sobre';
-@use 'filmes';
-@use 'personagens';
+@use 'section';
 
 
 * {
@@ -16,65 +15,9 @@ body {
   background-color: var.$mainBackgroundColor;
 }
 
-@mixin title($fontSize: 40px) {
-  font-size: $fontSize;
-  color: var.$mainTextColor;
-  font-family: 'Kanit', sans-serif;
-  font-weight: bold;
-}
-
-@mixin text($fontSize: 16px) {
-  font-size: $fontSize;
-  color: var.$mainTextColor;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.title--small {
-  @include title(16px);
-}
-
 .container {
   @media (min-width: var.$mediaMinWidth) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
-.section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  min-height: 320px;
-  padding: 16px;
-
-  &__title {
-    @include title();
-
-    @media (min-width: var.$mediaMinWidth) {
-      @include title(32px);
-    }
-  }
-
-  &__text {
-    @include text();
-    text-align: center;
-  }
-
-  &__button {
-    display: block;
-
-    color: var.$mainTextColor;
-    text-decoration: none;
-    text-align: center;
-    border: 1px solid var.$mainTextColor;
-    border-radius: 5px;
-    padding:8px;
-    margin: 8px 0;
-    width: 150px;
-
-    @include title(24px);
-  }
-}
-

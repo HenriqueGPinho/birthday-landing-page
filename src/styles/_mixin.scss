@@ -1,0 +1,19 @@
+@use 'var';
+
+@mixin title($fontSize: 40px) {
+  font-size: $fontSize;
+  color: var.$mainTextColor;
+  font-family: 'Kanit', sans-serif;
+  font-weight: bold;
+
+}
+
+.title--small {
+  @include title(16px);
+}
+
+@mixin text($fontSize: 16px) {
+  font-size: $fontSize;
+  color: var.$mainTextColor;
+  font-family: 'Montserrat', sans-serif;
+}
