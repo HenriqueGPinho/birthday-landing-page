@@ -22,7 +22,7 @@ function countTime() {
   document.getElementById('counter').innerHTML = `${daysToEvent}d ${hoursToEvent}h ${minutesToEvent}min ${secondsToEvent}s`
 
   if (timeToEvent < 0) {
-    document.getElementById('presentation').innerHTML = `Evento expirado!<span id="counter"></span>`;
+    document.getElementById('presentation').innerHTML = `Meu aniverário já passou!<span id="counter"></span>`;
 
     return;
   }
